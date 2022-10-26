@@ -11,5 +11,9 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.firstName("Shivam"));
         Assertions.assertFalse(UserValidationMain.firstName("shivam"));
     }
-
+    @Test
+    void lastName() throws UserValidationMainException {
+        Assertions.assertTrue(UserValidationMain.lastName("Zagade"));
+        Assertions.assertFalse(UserValidationMain.lastName("las"));
+    }
 }
