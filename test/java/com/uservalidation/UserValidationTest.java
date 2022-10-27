@@ -44,4 +44,9 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.passwordRule3("f4#561AS"));
         Assertions.assertFalse(UserValidationMain.passwordRule3("esf523S"));
     }
+    @Test
+    void passwordRule4() throws UserValidationMainException{
+        Assertions.assertTrue(UserValidationMain.passwordRule4("f4#561AS"));
+        Assertions.assertFalse(UserValidationMain.passwordRule4("esf523S"));
+    }
 }
