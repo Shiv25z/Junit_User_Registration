@@ -16,4 +16,10 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.lastName("Zagade"));
         Assertions.assertFalse(UserValidationMain.lastName("las"));
     }
+
+    @Test
+    void email() throws UserValidationMainException {
+        Assertions.assertTrue(UserValidationMain.email("shivam@gamil.com"));
+        Assertions.assertFalse(UserValidationMain.email("sjaks"));
+    }
 }
