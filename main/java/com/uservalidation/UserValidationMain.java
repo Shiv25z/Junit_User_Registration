@@ -15,7 +15,8 @@ public class UserValidationMain {
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(firstName);
             return matcher.matches();
-    }public static boolean lastName(String lastName) throws UserValidationMainException {
+    }
+    public static boolean lastName(String lastName) throws UserValidationMainException {
         if (lastName == null) {
             throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, "Input cannot be Null");
         } else if (lastName.length() == 0) {
@@ -24,6 +25,18 @@ public class UserValidationMain {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(lastName);
+        return matcher.matches();
+    }
+
+    public static boolean email(String email) throws UserValidationMainException {
+        if (email == null) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, " Input can't be Null");
+        } else if (email.length() == 0) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.EMPTY, "Invalid Input");
+        }
+        String regex = "^[a-z]{3,}([_+-.]?[a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+([.,][a-z]{2,3}+)*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
 
