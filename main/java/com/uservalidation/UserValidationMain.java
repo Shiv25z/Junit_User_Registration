@@ -52,6 +52,18 @@ public class UserValidationMain {
         return matcher.matches();
     }
 
+    public static boolean passwordRule1(String password) throws UserValidationMainException{
+        if (password == null) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, " Input can't be Null");
+        } else if (password.length() == 0) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.EMPTY, "Invalid Input");
+        }
+        String regex = "^[0-9a-zA-Z!,@#$&*().]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
+
 
     public static void main(String[] args) {
         System.out.println("_________________ Welcome to Junit User Registration Problem! _________________");

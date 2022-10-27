@@ -27,4 +27,10 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.phoneNumber("91 1111111111"));
         Assertions.assertFalse(UserValidationMain.phoneNumber("911561561156"));
     }
+
+    @Test
+    void passwordRule1() throws UserValidationMainException{
+        Assertions.assertTrue(UserValidationMain.passwordRule1("f4#561AS"));
+        Assertions.assertFalse(UserValidationMain.passwordRule1("esf523S"));
+    }
 }
