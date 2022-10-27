@@ -30,7 +30,7 @@ public class UserValidationTest {
 
     @Test
     void passwordRule1() throws UserValidationMainException{
-        Assertions.assertTrue(UserValidationMain.passwordRule1("f4#561AS"));
-        Assertions.assertFalse(UserValidationMain.passwordRule1("esf523S"));
+        Assertions.assertTrue(UserValidationMain.passwordRule2("f4#561AS"));
+        Assertions.assertFalse(UserValidationMain.passwordRule2("esf523S"));
     }
 }

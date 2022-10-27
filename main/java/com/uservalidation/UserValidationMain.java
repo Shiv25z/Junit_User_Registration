@@ -52,13 +52,13 @@ public class UserValidationMain {
         return matcher.matches();
     }
 
-    public static boolean passwordRule1(String password) throws UserValidationMainException{
+    public static boolean passwordRule2(String password) throws UserValidationMainException{
         if (password == null) {
             throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, " Input can't be Null");
         } else if (password.length() == 0) {
             throw new UserValidationMainException(UserValidationMainException.ExceptionType.EMPTY, "Invalid Input");
         }
-        String regex = "^[0-9a-zA-Z!,@#$&*().]{8,}$";
+        String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
