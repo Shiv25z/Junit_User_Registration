@@ -22,4 +22,9 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.email("shivam@gamil.com"));
         Assertions.assertFalse(UserValidationMain.email("sjaks"));
     }
+    @Test
+    void phoneNumber() throws UserValidationMainException {
+        Assertions.assertTrue(UserValidationMain.phoneNumber("91 1111111111"));
+        Assertions.assertFalse(UserValidationMain.phoneNumber("911561561156"));
+    }
 }

@@ -40,6 +40,18 @@ public class UserValidationMain {
         return matcher.matches();
     }
 
+    public static boolean phoneNumber(String phoneNumber) throws UserValidationMainException {
+        if (phoneNumber == null) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, " Input can't be Null");
+        } else if (phoneNumber.length() == 0) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.EMPTY, "Invalid Input");
+        }
+        String regex = "^(0|91)?[\\s][0-9]{10}";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        return matcher.matches();
+    }
+
 
     public static void main(String[] args) {
         System.out.println("_________________ Welcome to Junit User Registration Problem! _________________");
