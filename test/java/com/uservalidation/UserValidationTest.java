@@ -49,4 +49,10 @@ public class UserValidationTest {
         Assertions.assertTrue(UserValidationMain.passwordRule4("f4#561AS"));
         Assertions.assertFalse(UserValidationMain.passwordRule4("esf523S"));
     }
+
+    @Test
+    void emailIdValidator() throws UserValidationMainException {
+        Assertions.assertTrue(UserValidationMain.emailIdValidator("abc.100@abc.com.au"));
+        Assertions.assertFalse(UserValidationMain.emailIdValidator("abc@gmail.com.aa.au"));
+    }
 }

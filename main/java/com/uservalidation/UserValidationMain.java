@@ -98,6 +98,18 @@ public class UserValidationMain {
         return matcher.matches();
     }
 
+    public static boolean emailIdValidator(String emailId) throws UserValidationMainException {
+        if (emailId == null) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.NULL, " Input can't be Null");
+        } else if (emailId.length() == 0) {
+            throw new UserValidationMainException(UserValidationMainException.ExceptionType.EMPTY, "Invalid Input");
+        }
+        String regex = "^[a-z]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+([.,]?[a-z]{2,3}){0,1}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailId);
+        return matcher.matches();
+    }
+
 
 
     public static void main(String[] args) {
