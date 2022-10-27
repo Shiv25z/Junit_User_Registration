@@ -1,6 +1,6 @@
 package com.uservalidation;
 
-public class UserValidationMainException extends Exception {
+public class UserValidationMainException extends Exception {// UC12 Custom Exception Handling
     String message;
     static ExceptionType type;
     enum ExceptionType {
